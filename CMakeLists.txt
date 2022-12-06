@@ -14,6 +14,7 @@ set(OSU_SOURCES
 
 include_directories(include)
 add_library(pp-lib SHARED ${OSU_SOURCES})
+add_library(pp-libc SHARED src/Bindings.cpp ${OSU_SOURCES})
 
 add_executable(pp-lib-test test/main.cpp)
 target_link_libraries(pp-lib-test pp-lib)

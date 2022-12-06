@@ -1,5 +1,6 @@
-#include "pp/performance/Beatmap.h"
+#include "shared/Beatmap.h"
 #include "pp/performance/Osu/OsuScore.h"
+#include "diff/calculator/DifficultyCalculator.h"
 
 using namespace pp;
 

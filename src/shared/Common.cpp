@@ -1,9 +1,9 @@
-#include <pp/Common.h>
+#include "shared/Common.h"
 
 #include <string>
 #include <vector>
 
-PP_NAMESPACE_BEGIN
+SHARED_NAMESPACE_BEGIN
 
 std::vector<std::string> Split(std::string text, const std::string& delim)
 {
@@ -155,4 +155,4 @@ EGamemode ToGamemode(std::string modeString)
         return EGamemode::Osu;
 }
 
-PP_NAMESPACE_END
+SHARED_NAMESPACE_END

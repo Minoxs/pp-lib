@@ -1,5 +1,5 @@
-#include <pp/Common.h>
-#include <pp/performance/taiko/TaikoScore.h>
+#include "shared/Common.h"
+#include "pp/performance/taiko/TaikoScore.h"
 
 PP_NAMESPACE_BEGIN
 

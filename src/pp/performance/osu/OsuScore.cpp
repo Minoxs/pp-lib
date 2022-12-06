@@ -1,5 +1,5 @@
-#include <pp/Common.h>
-#include <pp/performance/osu/OsuScore.h>
+#include "shared/Common.h"
+#include "pp/performance/osu/OsuScore.h"
 
 PP_NAMESPACE_BEGIN
 

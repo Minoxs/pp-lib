@@ -3,13 +3,14 @@ project(pp-lib)
 
 set(CMAKE_CXX_STANDARD 17)
 set(OSU_SOURCES
-        src/performance/catch/CatchScore.cpp
-        src/performance/mania/ManiaScore.cpp
-        src/performance/osu/OsuScore.cpp
-        src/performance/taiko/TaikoScore.cpp
-        src/performance/Beatmap.cpp
-        src/performance/Score.cpp
-        src/Common.cpp
+        src/diff/calculator/DifficultyCalculator.cpp
+        src/pp/performance/catch/CatchScore.cpp
+        src/pp/performance/mania/ManiaScore.cpp
+        src/pp/performance/osu/OsuScore.cpp
+        src/pp/performance/taiko/TaikoScore.cpp
+        src/pp/performance/Score.cpp
+        src/shared/Beatmap.cpp
+        src/shared/Common.cpp
 )
 
 include_directories(include)

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <pp/Common.h>
+#include "shared/Common.h"
 #include <pp/performance/Score.h>
 
 PP_NAMESPACE_BEGIN

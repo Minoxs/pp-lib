@@ -2,7 +2,7 @@
 
 #include <algorithm>
 #include <cmath>
-#include <pp/shared/Types.h>
+#include "shared/Types.h"
 
 #include <vector>
 
@@ -10,7 +10,13 @@
 #define PP_NAMESPACE_BEGIN namespace pp {
 #define PP_NAMESPACE_END }
 
-PP_NAMESPACE_BEGIN
+#define DIFF_NAMESPACE_BEGIN namespace diff {
+#define DIFF_NAMESPACE_END }
+
+#define SHARED_NAMESPACE_BEGIN namespace shared {
+#define SHARED_NAMESPACE_END }
+
+SHARED_NAMESPACE_BEGIN
 
 class Exception
 {
@@ -133,4 +139,4 @@ std::string GamemodeName(EGamemode gamemode);
 std::string GamemodeTag(EGamemode gamemode);
 EGamemode ToGamemode(std::string modeString);
 
-PP_NAMESPACE_END
+SHARED_NAMESPACE_END

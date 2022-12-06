@@ -1,7 +1,7 @@
-#include <pp/Common.h>
-#include <pp/performance/Beatmap.h>
+#include "shared/Common.h"
+#include "shared/Beatmap.h"
 
-PP_NAMESPACE_BEGIN
+SHARED_NAMESPACE_BEGIN
 
 const std::unordered_map<std::string, Beatmap::EDifficultyAttributeType> Beatmap::s_difficultyAttributes{
 	{"Aim", Aim},
@@ -33,4 +33,4 @@ void Beatmap::SetDifficultyAttribute(EMods mods, EDifficultyAttributeType type, 
 	_difficulty[MaskRelevantDifficultyMods(_mode, mods)][type] = value;
 }
 
-PP_NAMESPACE_END
+SHARED_NAMESPACE_END

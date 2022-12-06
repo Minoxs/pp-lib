@@ -1,10 +1,10 @@
 #pragma once
 
-#include <pp/Common.h>
+#include "shared/Common.h"
 
 #include <unordered_map>
 
-PP_NAMESPACE_BEGIN
+SHARED_NAMESPACE_BEGIN
 
 DEFINE_EXCEPTION(BeatmapException);
 
@@ -100,4 +100,4 @@ private:
 	s32 _numSpinners = 0;
 };
 
-PP_NAMESPACE_END
+SHARED_NAMESPACE_END

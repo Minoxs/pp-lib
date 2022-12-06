@@ -1,7 +1,9 @@
 #pragma once
 
-#include <pp/Common.h>
-#include <pp/performance/Beatmap.h>
+#include "shared/Common.h"
+#include "shared/Beatmap.h"
+
+using namespace shared;
 
 PP_NAMESPACE_BEGIN
 

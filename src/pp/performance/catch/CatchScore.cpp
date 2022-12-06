@@ -1,5 +1,5 @@
-#include <pp/Common.h>
-#include <pp/performance/catch/CatchScore.h>
+#include "shared/Common.h"
+#include "pp/performance/catch/CatchScore.h"
 
 PP_NAMESPACE_BEGIN
 

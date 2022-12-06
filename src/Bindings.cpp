@@ -1,7 +1,8 @@
 #include "Bindings.h"
-#include "pp/performance/Beatmap.h"
+#include "shared/Beatmap.h"
 #include "pp/performance/Osu/OsuScore.h"
 
+using namespace shared;
 using namespace pp;
 
 BeatmapInfo stTest() {

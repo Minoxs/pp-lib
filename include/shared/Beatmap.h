@@ -8,13 +8,11 @@ SHARED_NAMESPACE_BEGIN
 
 DEFINE_EXCEPTION(BeatmapException);
 
-class Beatmap
-{
+class Beatmap {
 public:
 	Beatmap(s32 id);
 
-	enum EDifficultyAttributeType : byte
-	{
+	enum EDifficultyAttributeType : byte {
 		Aim = 0,
 		Speed,
 		OD,
@@ -30,16 +28,14 @@ public:
 		NumTypes,
 	};
 
-	enum ERankedStatus : s32
-	{
+	enum ERankedStatus : s32 {
 		Ranked = 1,
 		Approved = 2,
 		Qualified = 3,
 		Loved = 4,
 	};
 
-	enum EScoreVersion : s32
-	{
+	enum EScoreVersion : s32 {
 		ScoreV1 = 1,
 		ScoreV2 = 2,
 	};
@@ -48,6 +44,7 @@ public:
 
 	ERankedStatus RankedStatus() const { return _rankedStatus; }
 	EScoreVersion ScoreVersion() const { return _scoreVersion; }
+	s32 NumHitObjects() const { return _numHitCircles + _numSliders + _numSpinners; }
 	s32 NumHitCircles() const { return _numHitCircles; }
 	s32 NumSliders() const { return _numSliders; }
 	s32 NumSpinners() const { return _numSpinners; }
@@ -63,13 +60,11 @@ public:
 	void SetMode(EGamemode mode) { _mode = mode; }
 	void SetPlayMode(EGamemode mode) { _playmode = mode; }
 
-	static bool ContainsAttribute(const std::string &difficultyAttributeName)
-	{
+	static bool ContainsAttribute(const std::string &difficultyAttributeName) {
 		return s_difficultyAttributes.find(difficultyAttributeName) != s_difficultyAttributes.end();
 	}
 
-	static EDifficultyAttributeType DifficultyAttributeFromName(const std::string &difficultyAttributeName)
-	{
+	static EDifficultyAttributeType DifficultyAttributeFromName(const std::string &difficultyAttributeName) {
 		return s_difficultyAttributes.at(difficultyAttributeName);
 	}
 
@@ -87,8 +82,8 @@ private:
 
 	// Calculated difficulty
 	using difficulty_t = std::unordered_map<
-		std::underlying_type_t<EMods>,
-		std::array<f32, NumTypes>>;
+					std::underlying_type_t<EMods>,
+					std::array<f32, NumTypes>>;
 
 	difficulty_t _difficulty;
 

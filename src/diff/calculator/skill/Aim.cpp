@@ -1,4 +1,4 @@
-#include "diff/calculator/skill/aim.h"
+#include "diff/calculator/skill/Aim.h"
 
 DIFF_NAMESPACE_BEGIN
 

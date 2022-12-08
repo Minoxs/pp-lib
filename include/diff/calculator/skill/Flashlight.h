@@ -5,11 +5,12 @@
 
 DIFF_NAMESPACE_BEGIN
 
+// TODO IMPLEMENT THIS STUFF
 class Flashlight : public Skill {
 public:
 	Flashlight(const std::vector<EMods> &mods);
 
-	void Process(DifficultyHitObject current) override;
+	void Process(DifficultyHitObject * current) override;
 	double DifficultyValue() override;
 };
 

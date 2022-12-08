@@ -10,15 +10,15 @@ using namespace shared;
 DIFF_NAMESPACE_BEGIN
 
 typedef struct {
-	double Aim;
-	double Speed;
-	double StarRating;
-	double OD;
-	double AR;
-	double MaxCombo;
-	double FlashLight;
-	double SliderFactor;
-	double SpeedNoteCount;
+	f64 StarRating;
+	f64 Aim;
+	f64 Speed;
+	f64 OD;
+	f64 AR;
+	f64 MaxCombo;
+	f64 FlashLight;
+	f64 SliderFactor;
+	f64 SpeedNoteCount;
 } BeatmapDifficulty;
 
 class DifficultyCalculator {
@@ -26,6 +26,14 @@ public:
 	explicit DifficultyCalculator(FullBeatmap *beatmap);
 
 	BeatmapDifficulty Calculate(const std::vector<EMods> &mods);
+
+	static double DifficultyRange(double difficulty, double min, double mid, double max) {
+		if (difficulty > 5)
+			return mid + (max - mid) * (difficulty - 5) / 5;
+		if (difficulty < 5)
+			return mid - (mid - min) * (5 - difficulty) / 5;
+		return mid;
+	};
 
 protected:
 	FullBeatmap *_beatmap;

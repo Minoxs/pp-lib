@@ -1,13 +1,15 @@
 #include "diff/calculator/osu/OsuDifficultyCalculator.h"
 #include "diff/calculator/osu/OsuDifficultyHitObject.h"
-#include "diff/calculator/skill/aim.h"
-#include "diff/calculator/skill/flashlight.h"
-#include "diff/calculator/skill/speed.h"
+#include "diff/calculator/osu/OsuHitWindows.h"
+#include "diff/calculator/skill/Aim.h"
+#include "diff/calculator/skill/Flashlight.h"
+#include "diff/calculator/skill/Speed.h"
 
 DIFF_NAMESPACE_BEGIN
 
 BeatmapDifficulty OsuDifficultyCalculator::CreateDifficultyAttributes(FullBeatmap* beatmap, const std::vector<EMods> &mods, const std::vector<Skill*> &skills, double clockRate) {
 	auto ret = BeatmapDifficulty {
+		.StarRating = 0,
 		.Aim =  0,
 		.Speed =  0,
 		.OD = 0,
@@ -42,7 +44,24 @@ BeatmapDifficulty OsuDifficultyCalculator::CreateDifficultyAttributes(FullBeatma
 					1.0f / 1.1f
 	);
 
-	// TODO FINISH TRANSPILING
+	double starRating = (basePerformance > 0.00001) ? cbrt(OsuDifficultyCalculator::PERFORMANCE_BASE_MULTIPLIER) * 0.027 * (cbrt(100000 / pow(2, 1/1.1f) * basePerformance) + 4)  : 0;
+	double preempt = DifficultyRange(beatmap->AR, 1800, 1200, 450) / clockRate;
+	int maxCombo = beatmap->MaxCombo;
+
+	HitWindows* hitWindows = new OsuHitWindows();
+	hitWindows->SetDifficulty(beatmap->OD);
+
+	double hitWindowGreat = hitWindows->GetHitResultGreat() / clockRate;
+
+	ret.StarRating = starRating;
+	ret.Aim = aimRating;
+	ret.Speed = speedRating;
+	ret.SpeedNoteCount = speedNotes;
+	ret.FlashLight = flashlightRating;
+	ret.SliderFactor = sliderFactor;
+	ret.AR = (preempt > 1200) ? (1800 - preempt) / 120 : (1200 - preempt) / 150 + 5;
+	ret.OD = (80 - hitWindowGreat) / 6;
+	ret.MaxCombo = maxCombo;
 
 	return ret;
 }

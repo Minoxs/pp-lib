@@ -10,6 +10,8 @@ DIFF_NAMESPACE_BEGIN
 
 class OsuDifficultyCalculator : public DifficultyCalculator {
 public:
+	constexpr static double PERFORMANCE_BASE_MULTIPLIER = 1.14;
+
 	explicit OsuDifficultyCalculator(FullBeatmap *beatmap) : DifficultyCalculator(beatmap) {}
 
 protected:

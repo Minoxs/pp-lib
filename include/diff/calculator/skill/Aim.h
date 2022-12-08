@@ -5,13 +5,13 @@
 
 DIFF_NAMESPACE_BEGIN
 
-class Speed : public Skill {
+// TODO IMPLEMENT THIS STUFF
+class Aim : public Skill {
 public:
-	explicit Speed(const std::vector<EMods> &mods);
+	Aim(const std::vector<EMods> &mods, bool withSliders);
 
-	void Process(DifficultyHitObject* current) override;
+	void Process(DifficultyHitObject *current) override;
 	double DifficultyValue() override;
-	double RelevantNoteCount();
 };
 
 DIFF_NAMESPACE_END

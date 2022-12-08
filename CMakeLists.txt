@@ -6,12 +6,14 @@ set(OSU_SOURCES
         src/diff/calculator/DifficultyCalculator.cpp
         src/diff/calculator/FullBeatmap.cpp
         src/diff/calculator/HitObject.cpp
+        src/diff/calculator/HitWindows.cpp
         src/diff/calculator/Skill.cpp
         src/diff/calculator/osu/OsuDifficultyHitObject.cpp
         src/diff/calculator/osu/OsuDifficultyCalculator.cpp
-        src/diff/calculator/skill/aim.cpp
-        src/diff/calculator/skill/flashlight.cpp
-        src/diff/calculator/skill/speed.cpp
+        src/diff/calculator/osu/OsuHitWindows.cpp
+        src/diff/calculator/skill/Aim.cpp
+        src/diff/calculator/skill/Flashlight.cpp
+        src/diff/calculator/skill/Speed.cpp
         src/diff/ruleset/Ruleset.cpp
         src/pp/performance/catch/CatchScore.cpp
         src/pp/performance/mania/ManiaScore.cpp

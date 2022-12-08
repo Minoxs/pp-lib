@@ -14,7 +14,6 @@ public:
 	}
 
 	virtual void Process(DifficultyHitObject *current) = 0;
-
 	virtual double DifficultyValue() = 0;
 
 protected:
